@@ -1,0 +1,44 @@
+<script type="text/discourse-plugin" version="0.8">
+  function defaultSettings() {
+    return {};
+  }
+
+  const container = Discourse.__container__;
+  const { h } = require("virtual-dom");
+
+  api.createWidget("discord-sidebar", {
+    tagName: "div.sticky-sidebar",
+
+    html() {
+      const path = window.location.pathname;
+      const stickyOffset  = document.getElementsByClassName('d-header')[0].offsetHeight + 20;
+      const sidebarWrapper = document.getElementById("fixed-wrapper");
+    
+      function sidebarClasses() {
+        $("body").addClass("custom-sidebar");
+        $(".topic-list").addClass("with-sidebar").addClass(settings.sidebar_side);
+        $(".sticky-sidebar").css("top", stickyOffset + "px");
+      }
+
+      if (/^\/$/.test(path) || /^\/latest/.test(path) || /^\/new/.test(path) || /^\/unread/.test(path) || /^\/top/.test(path))  { // show sidebar for topic lists
+        sidebarClasses();
+        const nodes = [
+          h("iframe", {
+            src: `https://titanembeds.com/embed/${settings.server_id}`,
+            height: "600",
+            width: "800",
+            frameborder: "0"
+          })
+        ];
+        return h("div.discord-sidebar-contents " + ".discord-sidebar-all", nodes);      
+     } else {
+        $("body").removeClass("custom-sidebar");
+        $(".topic-list").removeClass("with-sidebar");
+      }
+    },
+  });
+</script>
+
+<script type='text/x-handlebars' data-template-name='/connectors/before-topic-list-body/discord-sidebar'>
+  <div class="discord-sidebar"> {{mount-widget widget="discord-sidebar"}} </div>
+</script>

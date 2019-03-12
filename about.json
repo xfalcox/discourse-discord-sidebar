@@ -1,0 +1,10 @@
+{
+  "name": "discourse-discord-sidebar",
+  "license_url": "https://github.com/xfalcox/discourse-discord-sidebar/blob/master/LICENSE",
+  "about_url": "https://github.com/xfalcox/discourse-discord-sidebar/blob/master/README.md",
+  "component": true,
+  "assets": {
+  },
+  "color_schemes": {
+  }
+}
