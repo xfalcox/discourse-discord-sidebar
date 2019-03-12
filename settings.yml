@@ -1,5 +1,6 @@
 discord_server_id:
   type: text
+  default: 555077426137268234
   description: |
     The server ID to be embeded.
 
