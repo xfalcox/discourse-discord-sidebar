@@ -15,9 +15,6 @@ stick_on_scroll:
   description: |
     When checked sidebar has a sticky position on scroll
 
-height:
-  default: 800
-
 titan_theme:
   default: DiscordDark
   type: enum
