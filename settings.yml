@@ -14,3 +14,48 @@ stick_on_scroll:
   default: true
   description: |
     When checked sidebar has a sticky position on scroll
+
+height:
+  default: 800
+
+titan_theme:
+  default: DiscordDark
+  type: enum
+  choices:
+    - BetterTitan
+    - DiscordDark
+    - FireWyvern
+    - IceWyvern
+    - MetroEdge
+
+titan_scrollbar_theme:
+  default: minimal-dark
+  type: enum
+  choices:
+    - light
+    - dark
+    - minimal
+    - minimal-dark
+    - light-2
+    - dark-2
+    - light-3
+    - dark-3
+    - light-thick
+    - dark-thick
+    - light-thin
+    - dark-thin
+    - inset
+    - inset-dark
+    - inset-2
+    - inset-2-dark
+    - inset-3
+    - inset-3-dark
+    - rounded
+    - rounded-dark
+    - rounded-dots
+    - rounded-dots-dark
+    - 3d
+    - 3d-dark
+    - 3d-thick
+    - 3d-thick-dark
+    - custom

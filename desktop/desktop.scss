@@ -11,7 +11,7 @@
     align-items: start;
     grid-template-rows: 50px auto;
     &.left {
-      grid-template-columns: 20% 78%;
+      grid-template-columns: 28% 70%;
       @media screen and (max-width: 900px) {
         grid-template-columns: 25% 73%;
       }
@@ -20,7 +20,7 @@
         "sidebar body";
     }
     &.right {
-      grid-template-columns: 78% 20%;
+      grid-template-columns: 70% 28%;
       @media screen and (max-width: 900px) {
         grid-template-columns: 73% 25%;
       }
@@ -44,22 +44,19 @@
       @if $stick_on_scroll == "true" {
         position: sticky;
         top: 80px;
-        max-height: 70vh;
+        height: 80vh;
         @media screen and (max-height: 925px) {
           max-height: 55vh;
         }
-        overflow-y: auto;
       }
-      .cooked {
-        img, video, iframe {
-          width: 100%;
-          height: auto;
-        }
-        img.emoji {
-          width: 20px;
-        }
-        ul, ol {
-          padding-left: 30px;
+      .sticky-sidebar {
+        height: 100%;
+        .discord-sidebar-contents {
+          height: 100%;
+          iframe {
+            height: 100%;
+            width: 100%;
+          }
         }
       }
     }
